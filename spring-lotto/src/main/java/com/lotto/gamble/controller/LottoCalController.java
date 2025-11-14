@@ -1,0 +1,10 @@
+package com.lotto.gamble.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/lotto/cal")
+public class LottoCalController {
+
+}
