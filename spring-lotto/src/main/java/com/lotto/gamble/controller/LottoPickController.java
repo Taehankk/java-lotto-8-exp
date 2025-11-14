@@ -1,7 +1,5 @@
 package com.lotto.gamble.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +16,6 @@ import com.lotto.gamble.service.LottoPickService;
 public class LottoPickController {
 	private final LottoPickService lps;
 	
-	@Autowired
 	LottoPickController(LottoPickService lps) {
 		this.lps = lps;
 	}

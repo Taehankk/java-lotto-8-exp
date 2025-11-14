@@ -27,7 +27,6 @@ public class Lotto {
         validateDuplication(numbers);
     }
     
-    // TODO: 추가 기능 구현
     public void validateDuplication(List<Integer> numbers) {
     	Set<Integer> numberSet = new HashSet<>();
     	
