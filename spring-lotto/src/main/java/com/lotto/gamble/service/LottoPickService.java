@@ -14,17 +14,21 @@ public class LottoPickService {
 		List<List<Integer>> lottos = new ArrayList<>();
 		
 		for(int i = 0; i < lottoCnt; i++) {
-			lottos.add(pickOneLotto());
+			lottos.add(pickOneLotto().toNumberList());
 		}
 		
 		return lottos;
 	}
 	
-	private List<Integer> pickOneLotto() {
+	public Lotto pickOneLotto() {
 		List<Integer> numbers = Randoms.pickUniqueNumbersInRange(1, 45, 6);
 		
 		Lotto lotto = new Lotto(numbers);
 		
-		return lotto.toNumberList();
+		return lotto;
+	}
+	
+	public int pickBonusNum() {
+		return Randoms.pickNumberInRange(1, 45);
 	}
 }
