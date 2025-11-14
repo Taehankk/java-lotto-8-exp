@@ -25,8 +25,6 @@ public class LottoPickService {
 		
 		Lotto lotto = new Lotto(numbers);
 		
-		System.out.println(lotto.toString());
-		
 		return lotto.toNumberList();
 	}
 }
