@@ -43,6 +43,10 @@ public class Lotto {
     	return numbers.contains(num);
     }
     
+    public Lotto copy_Lotto() {
+    	return new Lotto(toNumberList());
+    }
+    
     public List<Integer> toNumberList() {
     	List<Integer> copy_numbers = new ArrayList<>();
     	
