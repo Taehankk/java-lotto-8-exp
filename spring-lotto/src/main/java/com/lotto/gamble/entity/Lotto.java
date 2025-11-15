@@ -44,6 +44,8 @@ public class Lotto {
     }
     
     public Lotto copy_Lotto() {
+    	if(this.numbers == null) return null;
+    	
     	return new Lotto(toNumberList());
     }
     
@@ -57,6 +59,10 @@ public class Lotto {
     	return copy_numbers;
     }
 
+    public List<Integer> getNumbers() {
+    	return toNumberList();
+    }
+    
     @Override
     public String toString() {
     	return numbers.toString();

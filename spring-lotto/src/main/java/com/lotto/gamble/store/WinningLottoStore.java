@@ -9,7 +9,7 @@ public class WinningLottoStore {
 	private Lotto winningLotto;
 	private int bonusNum;
 	
-	WinningLottoStore(Lotto winningLotto, int bonusNum) {
+	public void publish(Lotto winningLotto, int bonusNum) {
 		this.winningLotto = winningLotto;
 		this.bonusNum = bonusNum;
 	}
