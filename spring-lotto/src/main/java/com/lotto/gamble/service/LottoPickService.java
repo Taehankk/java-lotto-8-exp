@@ -5,8 +5,8 @@ import java.util.*;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
-import com.lotto.gamble.dto.Lotto;
 import com.lotto.gamble.dto.WinningNumbers;
+import com.lotto.gamble.lotto.Lotto;
 import com.lotto.gamble.store.WinningLottoStore;
 
 @Service

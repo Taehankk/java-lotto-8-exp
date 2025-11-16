@@ -1,4 +1,4 @@
-package com.lotto.gamble.dto;
+package com.lotto.gamble.lotto;
 
 import java.util.*;
 import java.util.stream.Collectors;

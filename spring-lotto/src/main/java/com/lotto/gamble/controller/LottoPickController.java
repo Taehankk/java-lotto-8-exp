@@ -32,6 +32,7 @@ public class LottoPickController {
 	@GetMapping("/winning")
 	public ResponseEntity<WinningNumbers> getWinningLotto() {
 		WinningNumbers wn = lps.getWinningData();
+		
 		return ResponseEntity.ok(wn);
 	}
 }

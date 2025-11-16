@@ -2,7 +2,7 @@ package com.lotto.gamble.store;
 
 import org.springframework.stereotype.Component;
 
-import com.lotto.gamble.dto.Lotto;
+import com.lotto.gamble.lotto.Lotto;
 
 import java.util.*;
 
@@ -24,5 +24,13 @@ public class WinningLottoStore {
 	
 	public int getBonusNum() {
 		return bonusNum;
+	}
+	
+	public boolean matchNumber(int num) {
+		return winningLotto.hasNumber(num);
+	}
+	
+	public boolean matchBonusNum(List<Integer> lotto) {
+		return lotto.contains(bonusNum);
 	}
 }
