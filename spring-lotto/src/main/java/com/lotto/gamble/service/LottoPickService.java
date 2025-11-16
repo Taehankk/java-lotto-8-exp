@@ -11,7 +11,7 @@ import com.lotto.gamble.store.WinningLottoStore;
 
 @Service
 public class LottoPickService {
-	private WinningLottoStore wls;
+	private final WinningLottoStore wls;
 	
 	LottoPickService(WinningLottoStore wls) {
 		this.wls = wls;
@@ -40,15 +40,10 @@ public class LottoPickService {
 	}
 	
 	public WinningNumbers getWinningData() {
-		return new WinningNumbers(getWinningNumbers(), getBonusNum());
-	}
-	
-	private List<Integer> getWinningNumbers() {
-		if(wls.getWinningNumbers() == null) wls.publish(pickOneLotto(), pickBonusNum());
-		return wls.getWinningNumbers();
-	}
-	
-	private int getBonusNum() {
-		return wls.getBonusNum();
+		if(wls.getWinningNumbers() == null) {
+			wls.publish(pickOneLotto(), pickBonusNum());			
+		}
+		
+		return new WinningNumbers(wls.getWinningNumbers(), wls.getBonusNum());
 	}
 }
