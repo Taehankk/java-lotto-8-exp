@@ -2,7 +2,9 @@ package com.lotto.gamble.store;
 
 import org.springframework.stereotype.Component;
 
-import com.lotto.gamble.entity.Lotto;
+import com.lotto.gamble.dto.Lotto;
+
+import java.util.*;
 
 @Component
 public class WinningLottoStore {
@@ -14,8 +16,10 @@ public class WinningLottoStore {
 		this.bonusNum = bonusNum;
 	}
 	
-	public Lotto getWinningLotto() {
-		return winningLotto.copy_Lotto();
+	public List<Integer> getWinningNumbers() {
+		if(winningLotto == null) return null;
+		
+		return winningLotto.getNumbers();
 	}
 	
 	public int getBonusNum() {

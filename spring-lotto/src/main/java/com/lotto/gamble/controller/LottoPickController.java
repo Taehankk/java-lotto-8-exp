@@ -9,19 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.*;
 
-import com.lotto.gamble.entity.Money;
+import com.lotto.gamble.dto.Money;
+import com.lotto.gamble.dto.WinningNumbers;
 import com.lotto.gamble.service.LottoPickService;
-import com.lotto.gamble.store.WinningLottoStore;
 
 @RestController
 @RequestMapping("/api/lotto/pick")
 public class LottoPickController {
 	private final LottoPickService lps;
-	private WinningLottoStore wls;
 	
-	LottoPickController(LottoPickService lps, WinningLottoStore wls) {
+	LottoPickController(LottoPickService lps) {
 		this.lps = lps;
-		this.wls = wls;
 	}
 	
 	@PostMapping("/purchase")
@@ -32,9 +30,8 @@ public class LottoPickController {
 	}
 	
 	@GetMapping("/winning")
-	public ResponseEntity<WinningLottoStore> getWinningLotto() {
-		wls.publish(lps.pickOneLotto(), lps.pickBonusNum());
-		
-		return ResponseEntity.ok(wls);
+	public ResponseEntity<WinningNumbers> getWinningLotto() {
+		WinningNumbers wn = lps.getWinningData();
+		return ResponseEntity.ok(wn);
 	}
 }

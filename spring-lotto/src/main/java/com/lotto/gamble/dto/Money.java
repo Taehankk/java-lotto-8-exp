@@ -1,4 +1,4 @@
-package com.lotto.gamble.entity;
+package com.lotto.gamble.dto;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

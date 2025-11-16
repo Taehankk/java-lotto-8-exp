@@ -2,14 +2,21 @@ package com.lotto.gamble.service;
 
 import org.springframework.stereotype.Service;
 import java.util.*;
-import java.util.stream.Collectors;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
-import com.lotto.gamble.entity.Lotto;
+import com.lotto.gamble.dto.Lotto;
+import com.lotto.gamble.dto.WinningNumbers;
+import com.lotto.gamble.store.WinningLottoStore;
 
 @Service
 public class LottoPickService {
+	private WinningLottoStore wls;
+	
+	LottoPickService(WinningLottoStore wls) {
+		this.wls = wls;
+	}
+	
 	public List<List<Integer>> drawingLotto(int lottoCnt) {
 		List<List<Integer>> lottos = new ArrayList<>();
 		
@@ -30,5 +37,18 @@ public class LottoPickService {
 	
 	public int pickBonusNum() {
 		return Randoms.pickNumberInRange(1, 45);
+	}
+	
+	public WinningNumbers getWinningData() {
+		return new WinningNumbers(getWinningNumbers(), getBonusNum());
+	}
+	
+	private List<Integer> getWinningNumbers() {
+		if(wls.getWinningNumbers() == null) wls.publish(pickOneLotto(), pickBonusNum());
+		return wls.getWinningNumbers();
+	}
+	
+	private int getBonusNum() {
+		return wls.getBonusNum();
 	}
 }

@@ -1,4 +1,4 @@
-package com.lotto.gamble.entity;
+package com.lotto.gamble.dto;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -60,6 +60,7 @@ public class Lotto {
     }
 
     public List<Integer> getNumbers() {
+    	if(numbers == null) return null;
     	return toNumberList();
     }
     
