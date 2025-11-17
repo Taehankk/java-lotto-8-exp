@@ -1,7 +1,12 @@
-import "./App.css";
+import style from "./App.module.css";
+import AppRouter from "./routes/AppRouter";
 
 function App() {
-  return <>로또 프로젝트 입니다.</>;
+  return (
+    <div className={style.container}>
+      <AppRouter />
+    </div>
+  );
 }
 
 export default App;

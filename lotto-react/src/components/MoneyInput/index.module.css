@@ -1,0 +1,41 @@
+.moneySection {
+  display: flex;
+  gap: 15px;
+}
+
+.moneyBox {
+  display: flex;
+  justify-content: center;
+  border: 1px solid lightblue;
+  border-radius: 10px;
+  padding: 2px 5px;
+
+  height: 50px;
+}
+
+.moneyInput {
+  border: none;
+  outline: none;
+  padding: 2px 8px;
+
+  font-size: 20px;
+
+  width: 240px;
+}
+
+.purchaseBtn {
+  display: flex;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  background-color: cyan;
+  padding: 2px;
+
+  align-items: center;
+  text-align: center;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  width: 80px;
+}
