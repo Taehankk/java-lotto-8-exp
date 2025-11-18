@@ -9,9 +9,13 @@ export const getLottos = async (money: number) => {
 };
 
 export const checkWinLotto = async (lottos: number[][]) => {
-  const res = await axiosInstance.post("/cal/winning", {
-    lottos: lottos,
-  });
+  try {
+    const res = await axiosInstance.post("/cal/winning", {
+      lottos: lottos,
+    });
 
-  return res.data;
+    return res.data;
+  } catch {
+    alert("1등을 먼저 뽑아주세요");
+  }
 };

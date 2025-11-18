@@ -1,4 +1,4 @@
-import CheckWinButton from "../components/CheckWinButton";
+import ButtonList from "../components/ButtonList";
 import LottoList from "../components/LottoList";
 import MoneyInput from "../components/MoneyInput";
 import Title from "../components/Title";
@@ -9,7 +9,7 @@ function LottoPage() {
       <Title />
       <MoneyInput />
       <LottoList />
-      <CheckWinButton />
+      <ButtonList />
     </div>
   );
 }
