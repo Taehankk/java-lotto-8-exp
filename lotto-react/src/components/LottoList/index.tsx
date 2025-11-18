@@ -12,9 +12,7 @@ function LottoList() {
       <div className={style.lottoList}>
         {lottos && lottos.length > 0 ? (
           lottos.map((lotto, index) => (
-            <div key={index}>
-              <Lotto lotto={lotto} />
-            </div>
+            <Lotto key={index + "lotto"} lotto={lotto} />
           ))
         ) : (
           <h4>로또를 구매해주세요</h4>

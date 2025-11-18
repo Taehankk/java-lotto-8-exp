@@ -1,6 +1,6 @@
 import ButtonList from "../components/ButtonList";
-import LottoList from "../components/LottoList";
 import MoneyInput from "../components/MoneyInput";
+import ResultSection from "../components/ResultSection";
 import Title from "../components/Title";
 
 function LottoPage() {
@@ -8,7 +8,7 @@ function LottoPage() {
     <div>
       <Title />
       <MoneyInput />
-      <LottoList />
+      <ResultSection />
       <ButtonList />
     </div>
   );

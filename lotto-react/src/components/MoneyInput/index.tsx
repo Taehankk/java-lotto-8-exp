@@ -6,13 +6,16 @@ import useLottoStore from "../../store/useLottoStore";
 function MoneyInput() {
   const [money, setMoney] = useState<number>(0);
   const setLottos = useLottoStore((state) => state.setLottos);
+  const setResult = useLottoStore((state) => state.setLottosResult);
 
   const changeMoney = (e: ChangeEvent<HTMLInputElement>) => {
     setMoney(Number(e.target.value));
   };
+
   const purchaseLotto = async () => {
     const data = await getLottos(money);
     setLottos(data);
+    setResult([]);
   };
 
   return (
