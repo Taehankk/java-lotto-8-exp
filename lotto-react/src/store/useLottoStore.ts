@@ -6,7 +6,7 @@ interface LottoState {
 }
 
 const useLottoStore = create<LottoState>((set) => ({
-  lottos: [[]],
+  lottos: [],
   setLottos: (lottos) => set(() => ({ lottos: lottos })),
 }));
 
