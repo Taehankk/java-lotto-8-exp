@@ -3,9 +3,7 @@ import style from "./index.module.css";
 
 function CreateWinnerButton() {
   const createWinner = async () => {
-    const result = await createWinnerLotto();
-
-    console.log(result);
+    await createWinnerLotto();
   };
 
   return (
