@@ -1,16 +1,18 @@
 import { useState, type ChangeEvent } from "react";
 import style from "./index.module.css";
 import { getLottos } from "../../api/lottoApi";
+import useLottoStore from "../../store/useLottoStore";
 
 function MoneyInput() {
   const [money, setMoney] = useState<number>(0);
+  const setLottos = useLottoStore((state) => state.setLottos);
 
   const changeMoney = (e: ChangeEvent<HTMLInputElement>) => {
     setMoney(Number(e.target.value));
   };
   const purchaseLotto = async () => {
     const data = await getLottos(money);
-    console.log(data);
+    setLottos(data);
   };
 
   return (

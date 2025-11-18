@@ -1,0 +1,22 @@
+.lotto {
+  display: inline-flex;
+  justify-content: center;
+  text-align: center;
+
+  gap: 10px;
+  min-width: 240px;
+  padding: 20px;
+
+  border-bottom: 2px dashed;
+}
+
+.lottoNumber {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 60px;
+  min-height: 60px;
+
+  border: 1px solid gray;
+  border-radius: 100%;
+}
