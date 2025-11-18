@@ -5,8 +5,8 @@ import style from "./index.module.css";
 function CheckWinButton() {
   const lottos = useLottoStore((state) => state.lottos);
 
-  const checkWinResult = () => {
-    const result = checkWinLotto(lottos);
+  const checkWinResult = async () => {
+    const result = await checkWinLotto(lottos);
 
     console.log(result);
   };

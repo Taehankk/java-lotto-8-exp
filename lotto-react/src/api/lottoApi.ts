@@ -8,11 +8,15 @@ export const getLottos = async (money: number) => {
   return res.data;
 };
 
+export const createWinnerLotto = async () => {
+  const res = await axiosInstance.get("/pick/winning");
+
+  return res.data;
+};
+
 export const checkWinLotto = async (lottos: number[][]) => {
   try {
-    const res = await axiosInstance.post("/cal/winning", {
-      lottos: lottos,
-    });
+    const res = await axiosInstance.post("/cal/winning", lottos);
 
     return res.data;
   } catch {
