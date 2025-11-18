@@ -7,3 +7,11 @@ export const getLottos = async (money: number) => {
 
   return res.data;
 };
+
+export const checkWinLotto = async (lottos: number[][]) => {
+  const res = await axiosInstance.post("/cal/winning", {
+    lottos: lottos,
+  });
+
+  return res.data;
+};
