@@ -1,3 +1,4 @@
+import { WinnerLabel, type Winner } from "../store/useLottoStore";
 import axiosInstance from "./axiosInstance";
 
 export const getLottos = async (money: number) => {
@@ -18,7 +19,7 @@ export const checkWinLotto = async (lottos: number[][]) => {
   try {
     const res = await axiosInstance.post("/cal/winning", lottos);
 
-    return res.data;
+    return res.data.map((winner: Winner) => WinnerLabel[winner]);
   } catch {
     alert("1등을 먼저 뽑아주세요");
   }

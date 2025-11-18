@@ -1,14 +1,15 @@
 import { checkWinLotto } from "../../api/lottoApi";
-import useLottoStore from "../../store/useLottoStore";
+import useLottoStore, { WinnerLabel } from "../../store/useLottoStore";
 import style from "./index.module.css";
 
 function CheckWinButton() {
   const lottos = useLottoStore((state) => state.lottos);
+  const setResult = useLottoStore((state) => state.setLottosResult);
 
   const checkWinResult = async () => {
-    const result = await checkWinLotto(lottos);
+    const result: string[] = await checkWinLotto(lottos);
 
-    console.log(result);
+    setResult(result);
   };
 
   return (
